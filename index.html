@@ -1,16 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Versículos com GIFs</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <button id="botaoMensagem">Clique para ver um versículo</button>
-    <div class="mensagem" id="mensagem"></div>
-    <img class="figurinha" id="figurinha" src="" alt="GIF evangélico" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lanchonete Online</title>
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>Lanchonete Online</header>
+  <div class="container">
+    <h2>Cardápio</h2>
+    <div class="cardapio" id="cardapio"></div>
 
-   <script src="script.js"></script>
-  </body>
+    <div id="carrinho">
+      <h2>Seu Carrinho</h2>
+      <ul id="lista-carrinho"></ul>
+      <p id="total">Total: R$ 0,00</p>
+    </div>
+
+    <form id="form-pedido">
+      <h2>Finalizar Pedido</h2>
+      <input type="text" id="nome" placeholder="Seu Nome" required>
+      <input type="text" id="telefone" placeholder="Telefone" required>
+      <input type="text" id="endereco" placeholder="Endereço de Entrega" required>
+      <button type="submit">Enviar Pedido via WhatsApp</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
 </html>
