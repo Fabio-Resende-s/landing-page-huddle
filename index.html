@@ -1,33 +1,93 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lanchonete Online</title>
- <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Homenagem — Jhamilly (16 anos)</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>Lanchonete Online</header>
-  <div class="container">
-    <h2>Cardápio</h2>
-    <div class="cardapio" id="cardapio"></div>
 
-    <div id="carrinho">
-      <h2>Seu Carrinho</h2>
-      <ul id="lista-carrinho"></ul>
-      <p id="total">Total: R$ 0,00</p>
+  <!-- ENTRY / PASSWORD -->
+  <div class="entry" id="entryScreen">
+    <div class="entry-box">
+      <h1>Feliz 16 anos, Jhamilly!</h1>
+      <p>Para entrar na homenagem, digite a senha que seu pai preparou 💖</p>
+      <input id="pwdInput" class="input" type="password" placeholder="Digite a senha (ex: amordepai)" />
+      <div style="display:flex;gap:10px;justify-content:center;margin-top:14px">
+        <button id="enterBtn" class="btn">Entrar</button>
+        <button id="cancelBtn" class="linkless">Fechar</button>
+      </div>
+      <p style="font-size:13px;color:#6b4a5a;margin-top:10px">Dica: senha de pai para filha 💌</p>
     </div>
-
-    <form id="form-pedido">
-      <h2>Finalizar Pedido</h2>
-      <input type="text" id="nome" placeholder="Seu Nome" required>
-      <input type="text" id="telefone" placeholder="Telefone" required>
-      <input type="text" id="endereco" placeholder="Endereço de Entrega" required>
-      <button type="submit">Enviar Pedido via WhatsApp</button>
-    </form>
   </div>
 
-  <script src="script.js"></script>
+  <header id="siteHeader" style="display:none">
+    <div class="logo">
+      <div class="dot">❤</div>
+      <div>
+        <h2 style="margin:0">Homenagem — Amor de Pai</h2>
+        <div style="font-size:13px;color:#6b4a5a">Jhamilly · 16 anos</div>
+      </div>
+    </div>
+  </header>
 
+  <main id="mainContent" style="display:none">
+    <div class="card-wrap">
+      <section class="card card-flip" id="tributeCard">
+        <div class="card-inner">
+          <div class="side front">
+            <div class="hearts">💕</div>
+            <h2>Para Jhamilly</h2>
+            <div class="subtitle">Amor de Pai — Uma homenagem especial</div>
+            <p class="message" id="tributeMessage">Filha, mesmo distante, cada lembrança sua vive em mim. Cada sorriso seu ilumina meus dias e cada conquista sua enche meu coração de orgulho. Feliz aniversário! Com amor, seu pai.</p>
+            <div class="actions">
+              <button id="flipBtn" class="btn">Abrir Cartão</button>
+              <button id="playMusicBtn" class="small">Tocar música</button>
+              <a id="downloadBtn" class="small" href="#" download="homenagem_jhamilly.html">Baixar página</a>
+            </div>
+          </div>
+
+          <div class="side back" style="background:linear-gradient(180deg,var(--accent-2),#fff)">
+            <h3 style="margin:0">Mensagem especial</h3>
+            <p style="padding:12px;max-width:380px;text-align:center">Jhamilly, apesar do tempo e da distância, meus pensamentos e orações estão sempre com você. Que esta nova idade abra portas de alegria, paz e muitas bênçãos. Sempre que olhar para este cartão, lembre-se: seu pai te ama infinitamente.</p>
+            <button id="closeCardBtn" class="btn">Fechar</button>
+          </div>
+        </div>
+      </section>
+
+      <aside class="gallery card">
+        <div class="viewer" id="mainViewer"></div>
+        <div class="thumbnails" id="thumbs"></div>
+        <div class="controls">
+          <button id="prevBtn" class="small">◀ Anterior</button>
+          <button id="nextBtn" class="small">Próximo ▶</button>
+          <div style="flex:1"></div>
+          <div style="font-size:13px;color:#6b4a5a">Clique na miniatura para abrir em tela maior</div>
+        </div>
+      </aside>
+    </div>
+    <footer>Feito com carinho por seu pai — Uma homenagem de amor.</footer>
+  </main>
+
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <div class="modal-top">
+        <strong id="modalTitle">Mídia</strong>
+        <div>
+          <button id="closeModal" class="small">Fechar ✕</button>
+        </div>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- música de fundo (instrumental suave) -->
+  <audio id="bgMusic" loop>
+    <source src="img/musica1.mp3" type="audio/mpeg">
+    <source src="img/musica1.mp3" type="audio/mpeg">
+  </audio>
+  
+<script src="./script.js"></script>
 </body>
 </html>
