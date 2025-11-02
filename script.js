@@ -96,7 +96,7 @@
     ];
 
     // A senha definida
-    const ACCESS_PWD = 'amordepai';
+    const ACCESS_PWD = '';
     function toggleSenha() {
   const senhaInput = document.getElementById('senha');
   if (senhaInput.type === 'password') {
